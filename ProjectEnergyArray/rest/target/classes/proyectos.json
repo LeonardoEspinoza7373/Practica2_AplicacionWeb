@@ -1,0 +1,20 @@
+[
+    {
+        "nombre": "coca codo",
+        "descripcion": "hidroelectrica para generar enegia en la costa",
+        "fechaInicioConstruccion": "2006-08-09",
+        "fechaFinConstruccion": "2056-07-04",
+        "inversionistas": "empresa softtonic",
+        "costos": "69564",
+        "electricidadGenerada": "3652",
+        "montoTotal": "2000000",
+        "transacciones": [
+            {
+                "tipo": "Creacion",
+                "monto": "200000",
+                "fecha": "2024-02-12",
+                "detalle": "Creado con exito"
+            }
+        ]
+    }
+]

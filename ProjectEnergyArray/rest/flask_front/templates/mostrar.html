@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Proyectos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Proyectos de Generación de Energía</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Inversionistas</th>
+                    <th>Costo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for proyecto in proyectos %}
+                <tr>
+                    <td>{{ proyecto.nombre }}</td>
+                    <td>{{ proyecto.descripcion }}</td>
+                    <td>{{ proyecto.inversionistas }}</td>
+                    <td>{{ proyecto.costos }}</td>
+                    <td>
+                        <a href="{{ url_for('gestionar_transacciones', nombre=proyecto.nombre) }}" class="btn btn-info">Gestionar Transacciones</a>
+                        <a href="{{ url_for('eliminar_proyecto') }}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Volver al Inicio</a>
+    </div>
+</body>
+</html>

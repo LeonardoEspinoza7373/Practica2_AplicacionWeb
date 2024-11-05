@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Proyectos</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; padding: 20px; }
+        h1 { color: #007bff; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background-color: #007bff; color: white; }
+        .btn {
+            display: inline-block; 
+            background-color: #007bff; 
+            color: white; 
+            padding: 10px 15px; 
+            border-radius: 5px; 
+            text-align: center; 
+            text-decoration: none; 
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Proyectos</h1>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+            <th>Inversionistas</th>
+            <th>Costos</th>
+            <th>Electricidad Generada</th>
+            <th>Monto Total</th>
+        </tr>
+        {% for proyecto in proyectos %}
+        <tr>
+            <td>{{ proyecto['nombre'] }}</td>
+            <td>{{ proyecto['descripcion'] }}</td>
+            <td>{{ proyecto['fechaInicioConstruccion'] }}</td>
+            <td>{{ proyecto['fechaFinConstruccion'] }}</td>
+            <td>{{ proyecto['inversionistas'] }}</td>
+            <td>{{ proyecto['costos'] }}</td>
+            <td>{{ proyecto['electricidadGenerada'] }}</td>
+            <td>{{ proyecto['montoTotal'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}" class="btn">Volver al Inicio</a>
+</body>
+</html>

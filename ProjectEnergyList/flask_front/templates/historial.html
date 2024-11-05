@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Transacciones</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Historial de Transacciones</h1>
+    <table>
+        <tr>
+            <th>Tipo</th>
+            <th>Proyecto</th>
+            <th>Fecha</th>
+            <th>Detalles</th>
+        </tr>
+        {% for transaccion in transacciones %}
+            <tr class="{{ 'creacion' if transaccion.tipo == 'Creación' else 'eliminacion' }}">
+                <td>{{ transaccion.tipo }}</td>
+                <td>{{ transaccion.proyecto }}</td>
+                <td>{{ transaccion.fecha }}</td>
+                <td>{{ transaccion.detalles }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Volver al Inicio</a>
+</body>
+</html>

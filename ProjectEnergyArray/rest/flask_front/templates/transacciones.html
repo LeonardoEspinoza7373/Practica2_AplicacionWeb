@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Transacciones - {{ proyecto.nombre }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Gestionar Transacciones - {{ proyecto.nombre }}</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="tipo">Tipo de Transacción:</label>
+                <input type="text" class="form-control" id="tipo" name="tipo" required>
+            </div>
+            <div class="form-group">
+                <label for="monto">Monto:</label>
+                <input type="number" class="form-control" id="monto" name="monto" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha:</label>
+                <input type="date" class="form-control" id="fecha" name="fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="detalle">Detalle:</label>
+                <textarea class="form-control" id="detalle" name="detalle" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Transacción</button>
+            <a href="{{ url_for('mostrar_proyectos') }}" class="btn btn-secondary">Cancelar</a>
+        </form>
+        
+        <h2 class="mt-4">Historial de Transacciones</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Monto</th>
+                    <th>Fecha</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaccion in proyecto.transacciones %}
+                <tr>
+                    <td>{{ transaccion.tipo }}</td>
+                    <td>{{ transaccion.monto }}</td>
+                    <td>{{ transaccion.fecha }}</td>
+                    <td>{{ transaccion.detalle }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('mostrar_proyectos') }}" class="btn btn-secondary">Volver a Proyectos</a>
+    </div>
+</body>
+</html>

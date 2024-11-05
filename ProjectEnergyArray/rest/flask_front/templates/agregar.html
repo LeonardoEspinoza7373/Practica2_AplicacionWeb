@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Proyecto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Agregar Proyecto</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <input type="text" class="form-control" id="descripcion" name="descripcion" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaInicioConstruccion">Fecha de Inicio:</label>
+                <input type="date" class="form-control" id="fechaInicioConstruccion" name="fechaInicioConstruccion" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaFinConstruccion">Fecha de Fin:</label>
+                <input type="date" class="form-control" id="fechaFinConstruccion" name="fechaFinConstruccion" required>
+            </div>
+            <div class="form-group">
+                <label for="inversionistas">Inversionistas:</label>
+                <input type="text" class="form-control" id="inversionistas" name="inversionistas" required>
+            </div>
+            <div class="form-group">
+                <label for="costos">Costos:</label>
+                <input type="number" class="form-control" id="costos" name="costos" required>
+            </div>
+            <div class="form-group">
+                <label for="electricidadGenerada">Electricidad Generada (kWh):</label>
+                <input type="number" class="form-control" id="electricidadGenerada" name="electricidadGenerada" required>
+            </div>
+            <div class="form-group">
+                <label for="montoTotal">Monto Total de Inversión:</label>
+                <input type="number" class="form-control" id="montoTotal" name="montoTotal" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Proyecto</button>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>

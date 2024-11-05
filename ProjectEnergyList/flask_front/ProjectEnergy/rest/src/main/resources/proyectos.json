@@ -1,0 +1,12 @@
+[
+    {
+        "nombre": "hidroelectrica",
+        "descripcion": "energia para un publo en quito",
+        "fechaInicioConstruccion": "2005-12-10",
+        "fechaFinConstruccion": "2056-06-15",
+        "inversionistas": "Reinfer",
+        "costos": "5852",
+        "electricidadGenerada": "236",
+        "montoTotal": "2000000"
+    }
+]

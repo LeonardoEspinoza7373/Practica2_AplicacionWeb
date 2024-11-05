@@ -1,0 +1,8 @@
+com/energia/rest/modelo/Proyecto.class
+com/energia/rest/utils/JsonUtils.class
+com/energia/rest/controlador/TransaccionController.class
+com/energia/rest/modelo/Transaccion.class
+com/energia/rest/controlador/ProyectoController.class
+com/energia/rest/modelo/Historial.class
+com/energia/rest/RestApplication.class
+com/energia/rest/WebConfig.class

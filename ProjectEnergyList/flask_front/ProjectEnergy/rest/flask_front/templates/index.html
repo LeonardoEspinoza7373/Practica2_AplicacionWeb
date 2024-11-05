@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Proyectos de Energía</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; padding: 20px; }
+        h1 { text-align: center; color: #007bff; }
+        nav { text-align: center; margin-top: 20px; }
+        a { margin: 0 15px; text-decoration: none; color: blue; }
+        .btn {
+            display: inline-block; 
+            background-color: #007bff; 
+            color: white; 
+            padding: 10px 15px; 
+            border-radius: 5px; 
+            text-align: center; 
+            text-decoration: none; 
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+</head>
+<body>
+    <h1>GESTIÓN DE PROYECTOS DE ENERGÍA</h1>
+    <nav>
+        <a href="{{ url_for('agregar_proyecto') }}" class="btn">Crear Nuevo Proyecto</a>
+        <a href="{{ url_for('eliminar_proyecto') }}" class="btn">Eliminar Proyecto</a>
+        <a href="{{ url_for('mostrar_proyectos') }}" class="btn">Mostrar Proyectos</a>
+    </nav>
+</body>
+</html>

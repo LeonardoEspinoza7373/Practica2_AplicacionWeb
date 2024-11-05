@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Proyectos de Energía</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('ruta/a/tu/imagen.jpg'); /* Cambia esta ruta a tu imagen */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo negro semi-transparente */
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 100px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em; /* Tamaño del encabezado */
+        }
+
+        .btn {
+            margin: 10px; /* Espacio entre botones */
+            width: 200px; /* Ancho fijo para botones */
+        }
+
+        /* Efecto hover para los botones */
+        .btn:hover {
+            opacity: 0.9;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Sistema de Gestión de Proyectos de Energía</h1>
+        <div class="mt-4 text-center">
+            <a href="{{ url_for('agregar_proyecto') }}" class="btn btn-primary">Agregar Proyecto</a>
+            <a href="{{ url_for('mostrar_proyectos') }}" class="btn btn-info">Mostrar Proyectos</a>
+        </div>
+        <div class="mt-4 text-center">
+            <a href="{{ url_for('gestionar_transacciones', nombre='nombre_del_proyecto') }}" class="btn btn-success">Ver historial de transacciones</a>
+        </div>
+    </div>
+</body>
+</html>

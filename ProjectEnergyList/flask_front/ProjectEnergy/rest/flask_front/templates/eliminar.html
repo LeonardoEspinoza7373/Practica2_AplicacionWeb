@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Proyecto</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; padding: 20px; }
+        h1 { color: #007bff; }
+        form { background-color: white; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        label { display: block; margin: 10px 0 5px; }
+        select {
+            width: 100%; 
+            padding: 10px; 
+            margin-bottom: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 5px; 
+        }
+        .btn {
+            display: inline-block; 
+            background-color: #007bff; 
+            color: white; 
+            padding: 10px 15px; 
+            border-radius: 5px; 
+            text-align: center; 
+            text-decoration: none; 
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Eliminar Proyecto</h1>
+    <form action="{{ url_for('eliminar_proyecto') }}" method="POST">
+        <label for="nombre">Selecciona un proyecto para eliminar:</label>
+        <select id="nombre" name="nombre">
+            {% for proyecto in proyectos %}
+                <option value="{{ proyecto['nombre'] }}">{{ proyecto['nombre'] }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Eliminar Proyecto">
+    </form>
+    <a href="{{ url_for('index') }}" class="btn">Volver al Inicio</a>
+</body>
+</html>
